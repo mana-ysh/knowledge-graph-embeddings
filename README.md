@@ -1,5 +1,4 @@
 # knowledge-graph-embeddings
----
 
 Python Implementations of Embedding-based methods for Knowledge Base Completion tasks, mainly inspired by [scikit-kge](https://github.com/mnick/scikit-kge) and [complex](https://github.com/ttrouill/complex).
 
