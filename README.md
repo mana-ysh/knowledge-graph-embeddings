@@ -2,7 +2,7 @@
 
 Python Implementations of Embedding-based methods for Knowledge Base Completion tasks, mainly inspired by [scikit-kge](https://github.com/mnick/scikit-kge) and [complex](https://github.com/ttrouill/complex).
 
-Currently, This repository contains the reimplementation of Complex Embeddings[Trouillon el al. 2016].   
+Currently, This repository contains the reimplementation of Complex Embeddings [Trouillon el al. 2016].   
 I plan to add the other baseline methods, such as TransE, RESCAL or Holographic Embeddings. 
 
 ## Run to train and test
