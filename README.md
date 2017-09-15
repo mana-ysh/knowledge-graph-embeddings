@@ -1,9 +1,8 @@
 # knowledge-graph-embeddings
----
 
 Python Implementations of Embedding-based methods for Knowledge Base Completion tasks, mainly inspired by [scikit-kge](https://github.com/mnick/scikit-kge) and [complex](https://github.com/ttrouill/complex).
 
-Currently, This repository contains the reimplementation of Complex Embeddings[Trouillon el al. 2016].   
+Currently, This repository contains the reimplementation of Complex Embeddings [Trouillon el al. 2016].   
 I plan to add the other baseline methods, such as TransE, RESCAL or Holographic Embeddings. 
 
 ## Run to train and test
@@ -68,6 +67,22 @@ optional arguments:
   --model MODEL        trained model path
 ```
 
+## Experiments
+
+### WordNet (WN18)
+
+| Models | MRR (flt) | MRR (raw) | Hits@1 (flt) | Hits@3 (flt) | Hits@10 (flt) |
+|:-----------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+| ComplEx* | 94.1 | 58.7 | 93.6 | 94.5 | 94.7 |
+| ComplEx | 94.3 | 58.2 | 94.0 | 94.6 | 94.8 |
+
+### FreeBase (FB15k)
+| Models | MRR (flt) | MRR (raw) | Hits@1 (flt) | Hits@3 (flt) | Hits@10 (flt) |
+|:-----------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+| ComplEx* | 69.2 | 24.2 | 59.9 | 75.9 | 84.0 |
+| ComplEx | 69.5 | 24.2 | 59.8 | 76.9 | 85.0 |
+
+\* means the results reported from the original papers 
 
 ## References
 
