@@ -16,6 +16,8 @@ def test(args):
     print('loading model...')
     if args.method == 'complex':
         from models.complex import ComplEx as Model
+    elif args.method == 'distmult':
+        from models.distmult import DistMult as Model
     else:
         raise NotImplementedError
 
@@ -46,7 +48,7 @@ if __name__ == '__main__':
     p.add_argument('--graphall', type=str, help='all graph file for filtered evaluation')
 
     # model
-    p.add_argument('--method', default=None, type=str, help='method ["complex"]')
+    p.add_argument('--method', default=None, type=str, help='method ["complex", "distmult"]')
     p.add_argument('--model', type=str, help='trained model path')
 
     args = p.parse_args()
