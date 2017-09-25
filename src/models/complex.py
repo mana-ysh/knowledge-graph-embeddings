@@ -1,6 +1,4 @@
 
-import copy
-
 from models.base_model import BaseModel
 from models.param import LookupParameter
 from utils.math_utils import *
@@ -8,7 +6,6 @@ from utils.math_utils import *
 
 class ComplEx(BaseModel):
     def __init__(self, **kwargs):
-        self.model_config = copy.deepcopy(kwargs)
         self.n_entity = kwargs.pop('n_entity')
         self.n_relation = kwargs.pop('n_relation')
         self.dim = kwargs.pop('dim')
