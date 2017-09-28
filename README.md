@@ -84,6 +84,11 @@ optional arguments:
 
 \* means the results reported from the original papers 
 
+## Dependencies
+* numpy
+* scipy
+
+
 ## References
 
 * Bordes, A.; Usunier, N.; Garcia-Duran, A.; Weston, J.; and Yakhnenko, O. 2013. Translating embeddings for modeling multi-relational data. In Advances in Neural Information Processing Systems (NIPS)
