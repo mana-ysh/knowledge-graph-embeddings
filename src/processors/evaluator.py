@@ -163,8 +163,7 @@ class Evaluator(object):
         return new_scores
 
     def cal_rank(self, score_mat, ents):
-        # TODO: Fix necessarily. In the case all elemtnts in scores have the same values, then return 1
-        return [1 + np.sum(score > score[e]) for score, e in zip(score_mat, ents)]
+        return [np.sum(score >= score[e]) for score, e in zip(score_mat, ents)]
 
     def get_best_info(self):
         if self.metric == 'mrr' or self.metric == 'hits' or self.metric == 'acc':  # higher value is better
