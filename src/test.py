@@ -18,6 +18,8 @@ def test(args):
         from models.complex import ComplEx as Model
     elif args.method == 'distmult':
         from models.distmult import DistMult as Model
+    elif args.method == 'transe':
+        from models.transe import TransE as Model
     else:
         raise NotImplementedError
 
