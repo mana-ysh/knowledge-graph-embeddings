@@ -22,7 +22,13 @@ class LookupParameter(Parameter):
         self.grad_indices = None
         self.part_grads = None
         self.dim = shape[1]
-        self.idx2grad = defaultdict(lambda: np.zeros(self.dim))
+        if len(self.shape) == 2:
+            self.idx2grad = defaultdict(lambda: np.zeros(self.dim))
+        elif len(self.shape) == 3:  # for RESCAL
+            assert self.shape[1] == self.shape[2]
+            self.idx2grad = defaultdict(lambda: np.zeros((self.dim, self.dim)))
+        else:
+            raise
 
     def add_grad(self, idx, grad):
         self.idx2grad[idx] += grad
@@ -32,7 +38,10 @@ class LookupParameter(Parameter):
         [self.add_grad(i, g) for i, g in zip(indices, grads)]
 
     def clear(self):
-        self.idx2grad = defaultdict(lambda: np.zeros(self.dim))
+        if len(self.shape) == 2:
+            self.idx2grad = defaultdict(lambda: np.zeros(self.dim))
+        else:
+            self.idx2grad = defaultdict(lambda: np.zeros((self.dim, self.dim)))
 
     def finalize(self):
         self.grad_indices = list(self.idx2grad.keys())
