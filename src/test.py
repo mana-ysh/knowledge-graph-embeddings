@@ -20,6 +20,8 @@ def test(args):
         from models.distmult import DistMult as Model
     elif args.method == 'transe':
         from models.transe import TransE as Model
+    elif args.method == 'hole':
+        from models.hole import HolE as Model
     else:
         raise NotImplementedError
 
@@ -50,7 +52,7 @@ if __name__ == '__main__':
     p.add_argument('--graphall', type=str, help='all graph file for filtered evaluation')
 
     # model
-    p.add_argument('--method', default=None, type=str, help='method ["complex", "distmult"]')
+    p.add_argument('--method', default=None, type=str, help='method ["complex", "distmult", "transe", "hole"]')
     p.add_argument('--model', type=str, help='trained model path')
 
     args = p.parse_args()

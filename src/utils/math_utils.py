@@ -24,3 +24,14 @@ def sigmoid(x):
 def softplus(x):
     return np.maximum(0, x)+np.log(1+np.exp(-np.abs(-x)))
 
+
+def circular_convolution(v1, v2):
+    freq_v1 = np.fft.fft(v1)
+    freq_v2 = np.fft.fft(v2)
+    return np.fft.ifft(np.multiply(freq_v1, freq_v2)).real
+
+
+def circular_correlation(v1, v2):
+    freq_v1 = np.fft.fft(v1)
+    freq_v2 = np.fft.fft(v2)
+    return np.fft.ifft(np.multiply(freq_v1.conj(), freq_v2)).real
