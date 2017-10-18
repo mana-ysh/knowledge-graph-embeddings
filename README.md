@@ -10,7 +10,7 @@ Python Implementations of Embedding-based methods for Knowledge Base Completion 
   - This model is equivalent to ComplEx, and the computation cost of ComplEx is lower than of HolE.
 - ComplEx [Trouillon+. 2016]
 - ANALOGY [Liu+. 2017] (not implemented yet)
-  - This model can be regarded as a hybrid between DistMult and RESCAL.
+  - This model can be regarded as a hybrid between DistMult and ComplEx.
 
 
 ## Run to train and test
