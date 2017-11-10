@@ -86,11 +86,36 @@ optional arguments:
 | ComplEx* | 94.1 | 58.7 | 93.6 | 94.5 | 94.7 |
 | ComplEx | 94.3 | 58.2 | 94.0 | 94.6 | 94.8 |
 
+hyper parameters
+
+* mode : single
+* epoch : 500
+* batch : 128
+* lr : 0.05
+* dim : 200
+* negative : 5
+* l2_reg : 0.001
+* gradclip : 5
+
+
+
 ### FreeBase (FB15k)
 | Models | MRR (flt) | MRR (raw) | Hits@1 (flt) | Hits@3 (flt) | Hits@10 (flt) |
 |:-----------:|:------------:|:------------:|:------------:|:------------:|:------------:|
 | ComplEx* | 69.2 | 24.2 | 59.9 | 75.9 | 84.0 |
 | ComplEx | 69.5 | 24.2 | 59.8 | 76.9 | 85.0 |
+
+hyper parameters
+
+* mode : single
+* epoch : 500
+* batch : 128
+* lr : 0.05
+* dim : 200
+* negative : 10
+* l2_reg : 0.0001
+* gradclip : 5
+
 
 \* means the results reported from the original papers 
 
