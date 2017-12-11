@@ -79,9 +79,6 @@ class ANALOGY(BaseModel):
     def _dist_composite(self, sub_emb, rel_emb):
         return np.multiply(sub_emb, rel_emb)
 
-    # def _cal_similarity(self, re_query, im_query, obj_re_emb, obj_im_emb):
-    #     return np.sum(re_query * obj_re_emb, axis=1) + np.sum(im_query * obj_im_emb, axis=1)
-
     def cal_scores(self, subs, rels):
         _batchsize = len(subs)
         sub_re_emb, sub_im_emb, sub_emb = self.pick_ent(subs)
