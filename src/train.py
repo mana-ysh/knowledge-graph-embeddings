@@ -97,6 +97,14 @@ def train(args):
                        margin=args.margin,
                        dim=args.dim,
                        mode=args.mode)
+    elif args.method == 'analogy':
+        from models.analogy import ANALOGY
+        model = ANALOGY(n_entity=n_entity,
+                        n_relation=n_relation,
+                        margin=args.margin,
+                        dim=args.dim,
+                        cp_ratio=args.cp_ratio,
+                        mode=args.mode)
     else:
         raise NotImplementedError
 
@@ -134,7 +142,7 @@ if __name__ == '__main__':
     p.add_argument('--valid', type=str, help='validation data')
 
     # model
-    p.add_argument('--method', default='complex', type=str, help='method ["complex", "distmult", "transe", "hole", "rescal"]')
+    p.add_argument('--method', default='complex', type=str, help='method ["complex", "distmult", "transe", "hole", "rescal", "analogy"]')
     p.add_argument('--epoch', default=100, type=int, help='number of epochs')
     p.add_argument('--batch', default=128, type=int, help='batch size')
     p.add_argument('--lr', default=0.001, type=float, help='learning rate')
@@ -145,6 +153,9 @@ if __name__ == '__main__':
     p.add_argument('--l2_reg', default=0., type=float, help='L2 regularization')
     p.add_argument('--gradclip', default=-1, type=float, help='gradient clipping')
     p.add_argument('--save_step', default=100, type=int, help='epoch step for saving model')
+
+    # model specific arguments
+    p.add_argument('--cp_ratio', default=0.5, type=float, help="ratio of complex's dimention in ANALOGY")
 
     # evaluation
     p.add_argument('--metric', default='mrr', type=str, help='evaluation metrics ["mrr", "hits"]')
