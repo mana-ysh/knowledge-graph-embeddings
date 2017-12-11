@@ -9,7 +9,7 @@ Python Implementations of Embedding-based methods for Knowledge Base Completion 
 - HolE [Nicklel+. 2016] 
   - This model is equivalent to ComplEx, and the computation cost of ComplEx is lower than of HolE.
 - ComplEx [Trouillon+. 2016]
-- ANALOGY [Liu+. 2017] (not implemented yet)
+- ANALOGY [Liu+. 2017]
   - This model can be regarded as a hybrid between DistMult and ComplEx.
 
 
@@ -26,7 +26,8 @@ usage: Link prediction models [-h] [--mode MODE] [--ent ENT] [--rel REL]
                               [--margin MARGIN] [--negative NEGATIVE]
                               [--opt OPT] [--l2_reg L2_REG]
                               [--gradclip GRADCLIP] [--save_step SAVE_STEP]
-                              [--metric METRIC] [--nbest NBEST] [--filtered]
+                              [--cp_ratio CP_RATIO] [--metric METRIC]
+                              [--nbest NBEST] [--filtered]
                               [--graphall GRAPHALL] [--log LOG]
 
 optional arguments:
@@ -37,7 +38,7 @@ optional arguments:
   --train TRAIN         training data
   --valid VALID         validation data
   --method METHOD       method ["complex", "distmult", "transe", "hole",
-                        "rescal"]
+                        "rescal", "analogy"]
   --epoch EPOCH         number of epochs
   --batch BATCH         batch size
   --lr LR               learning rate
@@ -49,6 +50,7 @@ optional arguments:
   --gradclip GRADCLIP   gradient clipping
   --save_step SAVE_STEP
                         epoch step for saving model
+  --cp_ratio CP_RATIO   ratio of complex's dimention in ANALOGY
   --metric METRIC       evaluation metrics ["mrr", "hits"]
   --nbest NBEST         n-best for hits metric
   --filtered            use filtered metric
@@ -73,7 +75,7 @@ optional arguments:
   --filtered           use filtered metric
   --graphall GRAPHALL  all graph file for filtered evaluation
   --method METHOD      method ["complex", "distmult", "transe", "hole",
-                       "rescal"]
+                       "rescal", "analogy"]
   --model MODEL        trained model path
 ```
 
