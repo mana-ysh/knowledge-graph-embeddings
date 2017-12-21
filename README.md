@@ -96,6 +96,7 @@ hyper parameters
 * lr : 0.05
 * dim : 200
 * negative : 5
+* opt : adagrad
 * l2_reg : 0.001
 * gradclip : 5
 
@@ -115,6 +116,7 @@ hyper parameters
 * lr : 0.05
 * dim : 200
 * negative : 10
+* opt : adagrad
 * l2_reg : 0.0001
 * gradclip : 5
 
