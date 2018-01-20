@@ -77,7 +77,7 @@ class TransE(BaseModel):
         return sub_emb + rel_emb
 
     def _cal_similarity(self, query, obj_emb):
-        return - np.sum((query - obj_emb), axis=1)
+        return - np.sum((query - obj_emb)**2, axis=1)
 
     def cal_scores(self, subs, rels):
         _batchsize = len(subs)
