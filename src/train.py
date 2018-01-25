@@ -143,15 +143,15 @@ if __name__ == '__main__':
 
     # model
     p.add_argument('--method', default='complex', type=str, help='method ["complex", "distmult", "transe", "hole", "rescal", "analogy"]')
-    p.add_argument('--epoch', default=100, type=int, help='number of epochs')
+    p.add_argument('--epoch', default=300, type=int, help='number of epochs')
     p.add_argument('--batch', default=128, type=int, help='batch size')
-    p.add_argument('--lr', default=0.001, type=float, help='learning rate')
-    p.add_argument('--dim', default=100, type=int, help='dimension of embeddings')
+    p.add_argument('--lr', default=0.05, type=float, help='learning rate')
+    p.add_argument('--dim', default=200, type=int, help='dimension of embeddings')
     p.add_argument('--margin', default=1., type=float, help='margin in max-margin loss for pairwise training')
     p.add_argument('--negative', default=10, type=int, help='number of negative samples for pairwise training')
-    p.add_argument('--opt', default='sgd', type=str, help='optimizer ["sgd", "adagrad"]')
-    p.add_argument('--l2_reg', default=0., type=float, help='L2 regularization')
-    p.add_argument('--gradclip', default=-1, type=float, help='gradient clipping')
+    p.add_argument('--opt', default='adagrad', type=str, help='optimizer ["sgd", "adagrad"]')
+    p.add_argument('--l2_reg', default=0.0001, type=float, help='L2 regularization')
+    p.add_argument('--gradclip', default=5, type=float, help='gradient clipping')
     p.add_argument('--save_step', default=100, type=int, help='epoch step for saving model')
 
     # model specific arguments
