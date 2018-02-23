@@ -30,7 +30,7 @@ def train(args):
 
     # TODO: develop the recording of arguments in logging
     logger.info('Arguments...')
-    for arg, val in vars(args).items():
+    for arg, val in sorted(vars(args).items()):
         logger.info('{:>10} -----> {}'.format(arg, val))
 
     ent_vocab = Vocab.load(args.ent)
